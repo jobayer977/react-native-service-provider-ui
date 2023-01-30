@@ -5,13 +5,15 @@ import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   useEffect(() => {
-    setTimeout(() => {
-      // SplashScreen?.hide();
-    }, 1500);
+    SplashScreen.hide();
+    return () => { };
   }, []);
+
   return (
     <SafeAreaView>
-      <Text>Hello World</Text>
+      <View>
+        <Text>Hello</Text>
+      </View>
     </SafeAreaView>
   );
 };

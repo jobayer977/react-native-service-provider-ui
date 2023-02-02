@@ -1,4 +1,4 @@
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 
 import SplashScreen from 'react-native-splash-screen';
@@ -10,7 +10,7 @@ const App = () => {
   }, []);
 
   return (
-    <View>
+    <SafeAreaView>
       <Text>App</Text>
       <Button
         title="Click"
@@ -18,7 +18,7 @@ const App = () => {
           SplashScreen.show();
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

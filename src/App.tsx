@@ -1,7 +1,9 @@
 import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 
+import {Provider} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
+import {rootReducers} from './redux';
 
 const App = () => {
   useEffect(() => {
@@ -10,15 +12,17 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <Text>App</Text>
-      <Button
-        title="Click"
-        onPress={() => {
-          SplashScreen.show();
-        }}
-      />
-    </SafeAreaView>
+    <Provider store={rootReducers}>
+      <SafeAreaView>
+        <Text>App</Text>
+        <Button
+          title="Click"
+          onPress={() => {
+            SplashScreen.show();
+          }}
+        />
+      </SafeAreaView>
+    </Provider>
   );
 };
 

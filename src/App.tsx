@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 
 import {Provider} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
+import {getFontFamily} from './constants/font-manager';
 import {rootReducers} from './redux';
 
 const App = () => {
@@ -14,7 +15,12 @@ const App = () => {
   return (
     <Provider store={rootReducers}>
       <SafeAreaView>
-        <Text>App</Text>
+        <Text
+          style={{
+            fontFamily: getFontFamily('Inter', 'Light'),
+          }}>
+          App
+        </Text>
         <Button
           title="Click"
           onPress={() => {

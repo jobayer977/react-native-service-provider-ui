@@ -1,33 +1,22 @@
-import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
 
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
-import {getFontFamily} from './constants/font-manager';
-import {rootReducers} from './redux';
+import { getFontFamily } from './constants/font-manager';
+import { rootReducers } from './redux';
+import { localizedStrings } from './constants/localization';
+import Routes from './routes';
 
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
-    return () => {};
+    return () => { };
   }, []);
 
   return (
     <Provider store={rootReducers}>
-      <SafeAreaView>
-        <Text
-          style={{
-            fontFamily: getFontFamily('Inter', 'Light'),
-          }}>
-          App
-        </Text>
-        <Button
-          title="Click"
-          onPress={() => {
-            SplashScreen.show();
-          }}
-        />
-      </SafeAreaView>
+      <Routes />
     </Provider>
   );
 };

@@ -9,6 +9,7 @@ import RNRestart from 'react-native-restart';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {localizedStrings} from '../constants/localization';
 import {useDispatch} from 'react-redux';
+
 const navigatorTheme = {
   ...DefaultTheme,
   colors: {

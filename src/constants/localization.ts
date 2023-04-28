@@ -1,28 +1,15 @@
 import LocalizedStrings from 'react-native-localization';
 let localizedStrings = new LocalizedStrings({
-    "en-US":{
-      how:"How do you want your egg today?",
-      boiledEgg:"Boiled egg",
-      softBoiledEgg:"Soft-boiled egg",
-      choice:"How to choose the egg"
-    },
-    en:{
-      how:"How do you want your egg today?",
-      boiledEgg:"Boiled egg",
-      softBoiledEgg:"Soft-boiled egg",
-      choice:"How to choose the egg"
-    },
-    it: {
-      how:"Come vuoi il tuo uovo oggi?",
-      boiledEgg:"Uovo sodo",
-      softBoiledEgg:"Uovo alla coque",
-      choice:"Come scegliere l'uovo"
-    }
+  'en-US': {
+    lets: 'Let’s',
+    getStart: 'Get Start !',
+  },
+  bn: {
+    lets: 'দেয়',
+    getStart: 'শুরু করা !',
+  },
 });
 
-let currentLocalizationLanguage = localizedStrings.getLanguage()
+let currentLocalizationLanguage = localizedStrings.getLanguage();
 
-export {
-    localizedStrings,
-    currentLocalizationLanguage
-}
+export {localizedStrings, currentLocalizationLanguage};

@@ -1,17 +1,15 @@
-import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
-import { Provider } from 'react-redux';
-import SplashScreen from 'react-native-splash-screen';
-import { getFontFamily } from './constants/font-manager';
-import { rootReducers } from './redux';
-import { localizedStrings } from './constants/localization';
+import {Provider} from 'react-redux';
 import Routes from './routes';
+import SplashScreen from 'react-native-splash-screen';
+import {StyleSheet} from 'react-native';
+import {rootReducers} from './redux';
 
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
-    return () => { };
+    return () => {};
   }, []);
 
   return (

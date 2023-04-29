@@ -1,8 +1,9 @@
 import * as eva from '@eva-design/eva';
 
-import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
+import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import React, {useEffect} from 'react';
 
+import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import {Provider} from 'react-redux';
 import Routes from './routes';
 import SplashScreen from 'react-native-splash-screen';
@@ -25,15 +26,18 @@ const App = () => {
     return () => {};
   }, []);
   return (
-    <ApplicationProvider
-      {...appMapping.eva}
-      theme={{...eva.light, ...customTheme}}>
-      <ThemeProvider>
-        <Provider store={rootReducers}>
-          <Routes />
-        </Provider>
-      </ThemeProvider>
-    </ApplicationProvider>
+    <>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider
+        {...appMapping.eva}
+        theme={{...eva.light, ...customTheme}}>
+        <ThemeProvider>
+          <Provider store={rootReducers}>
+            <Routes />
+          </Provider>
+        </ThemeProvider>
+      </ApplicationProvider>
+    </>
   );
 };
 export default App;

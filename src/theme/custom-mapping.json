@@ -1,5 +1,7 @@
 {
   "strict": {
-    "border-radius": 31
+    "border-radius": 31,
+    "size-large": 48,
+    "background-basic-color-2": "#F8F8F8"
   }
 }

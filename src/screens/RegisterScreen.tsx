@@ -12,7 +12,7 @@ import {selectAppFontFamily} from '../redux/app.reducer';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   const navigation = useNavigation();
   const {appFontFamily} = useSelector(
     createStructuredSelector({
@@ -40,7 +40,7 @@ const LoginScreen = () => {
                 fontFamily: getFontFamily(appFontFamily, 'Bold'),
               },
             ]}>
-            {localizedStrings.lets}
+            {localizedStrings.create}
           </Text>
           <Text
             style={[
@@ -49,10 +49,25 @@ const LoginScreen = () => {
                 fontFamily: getFontFamily(appFontFamily, 'Bold'),
               },
             ]}>
-            {localizedStrings.getStart}
+            {localizedStrings.yourAccount}
           </Text>
         </Div>
         <Div px={20} pt={53}>
+          <Div mb={24}>
+            <Input
+              accessoryLeft={() => (
+                <Icon
+                  name="person-outline"
+                  fill={GRAY_DARK}
+                  style={styles.icon}
+                />
+              )}
+              size="large"
+              placeholder="Name"
+              value={value}
+              onChangeText={nextValue => setValue(nextValue)}
+            />
+          </Div>
           <Div mb={24}>
             <Input
               accessoryLeft={() => (
@@ -87,21 +102,7 @@ const LoginScreen = () => {
             />
           </Div>
           <Div mb={26}>
-            <Button size="large">Sign In</Button>
-          </Div>
-
-          <Div row justifyContent="center" mb={24}>
-            <TouchableOpacity>
-              <Text
-                style={[
-                  styles.forgotPassTxt,
-                  {
-                    fontFamily: getFontFamily(appFontFamily, 'Bold'),
-                  },
-                ]}>
-                Forgot Password ?
-              </Text>
-            </TouchableOpacity>
+            <Button size="large">{localizedStrings.register}</Button>
           </Div>
 
           <Div bg={'#D9D9D9'} h={1} position="relative" mb={36}>
@@ -112,7 +113,7 @@ const LoginScreen = () => {
               justifyContent="center"
               w={'100%'}>
               <Div bg={WHITE} w={200} row justifyContent="center">
-                <Text>or</Text>
+                <Text>{localizedStrings.continueWith}</Text>
               </Div>
             </Div>
           </Div>
@@ -140,11 +141,11 @@ const LoginScreen = () => {
                   fontFamily: getFontFamily(appFontFamily, 'Regular'),
                 },
               ]}>
-              Does’t have an account ?{' '}
+              {localizedStrings.alreadyHaveAnAccount}{' '}
             </Text>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('RegisterScreen');
+                navigation.navigate('LoginScreen');
               }}>
               <Text
                 style={[
@@ -153,7 +154,7 @@ const LoginScreen = () => {
                     fontFamily: getFontFamily(appFontFamily, 'Bold'),
                   },
                 ]}>
-                Sign Up
+                {localizedStrings.signIn}
               </Text>
             </TouchableOpacity>
           </Div>
@@ -162,7 +163,7 @@ const LoginScreen = () => {
     </SafeAreaView>
   );
 };
-export default LoginScreen;
+export default RegisterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

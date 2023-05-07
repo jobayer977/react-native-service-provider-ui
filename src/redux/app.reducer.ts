@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSelector, createSlice} from '@reduxjs/toolkit';
 export interface IAppReducer {
   appFontFamily: string;
   appLanguage: string;
@@ -19,6 +19,13 @@ const slice = createSlice({
     },
   },
 });
+
+const selectState = state => state.AppReducer;
+
+export const selectAppFontFamily = createSelector(
+  selectState,
+  state => state.appFontFamily,
+);
 
 export const {setAppLanguage, setFontFamily} = slice.actions;
 export default slice.reducer;

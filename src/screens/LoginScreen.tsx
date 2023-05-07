@@ -91,7 +91,10 @@ const LoginScreen = () => {
           </Div>
 
           <Div row justifyContent="center" mb={24}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('ForgotPasswordScreen');
+              }}>
               <Text
                 style={[
                   styles.forgotPassTxt,

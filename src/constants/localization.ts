@@ -10,6 +10,11 @@ let localizedStrings = new LocalizedStrings({
     signUp: 'Sign Up',
     signIn: 'Sign In',
     continueWith: 'Continue with',
+    continue: 'Continue',
+    forgotPassword: 'Forgot Password ?',
+    enterYourEmailAddressForRecovering:
+      'Enter your email address for recovering',
+    yourPassword: 'Your Password',
   },
   bn: {
     lets: 'দেয়',
@@ -21,6 +26,11 @@ let localizedStrings = new LocalizedStrings({
     signUp: 'নিবন্ধন করুন',
     signIn: 'সাইন ইন করুন',
     continueWith: 'চালিয়ে যান',
+    continue: 'চালিয়ে যান',
+    forgotPassword: 'পাসওয়ার্ড ভুলে গেছেন ?',
+    enterYourEmailAddressForRecovering:
+      'পুনরুদ্ধারের জন্য আপনার ইমেল ঠিকানা লিখুন',
+    yourPassword: 'আপনার পাসওয়ার্ড',
   },
 });
 
